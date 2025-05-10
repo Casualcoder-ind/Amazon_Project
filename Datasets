@@ -1,0 +1,526 @@
+---- Amazon Project 
+
+-- Categary Table
+
+***sql
+create table Categary 
+(
+categary_id INT PRIMARY KEY
+, categary_name VARCHAR(20)
+);
+***
+
+Select * from categary ;
+
+-- Customers Table
+
+Select * from customers;
+alter table customers
+drop name;
+
+alter table customers
+ADD COLUMN first_name VARCHAR (20),
+ADD COLUMN last_name VARCHAR(20),
+ADD COLUMN state VARCHAR (6),
+ADD COLUMN Address VARCHAR (20) Default ('xxxx')
+;
+
+Select * from customers;
+
+-- Seller Table
+
+Create table Sellers
+(
+seller_id INT PRIMARY KEY ,
+seller_name VARCHAR (25),
+origin VARCHAR (5)
+);
+
+Select * from sellers;
+
+-- updateing data type
+ALter table sellers
+modify column origin VARCHAR (20)
+;
+
+INSERT ignore sellers (seller_id, seller_name, origin) VALUES
+(1, 'TechZone Inc.', 'New York'),
+(2, 'Gadget World', 'San Francisco'),
+(3, 'Elite Electronics', 'Chicago'),
+(4, 'SmartSupply', 'Houston'),
+(5, 'NextGen Devices', 'Seattle'),
+(6, 'UrbanTech Co.', 'Boston'),
+(7, 'Modern Machines', 'Miami'),
+(8, 'QuickGears', 'Denver'),
+(9, 'Infinity Traders', 'Los Angeles'),
+(10, 'Digital House', 'Phoenix'),
+(11, 'Nova Retail', 'Atlanta'),
+(12, 'Peak Electronics', 'Austin'),
+(13, 'BrightTech', 'Philadelphia'),
+(14, 'Core Gadgets', 'Dallas'),
+(15, 'Matrix Supply', 'San Diego'),
+(16, 'AlphaTech', 'Detroit'),
+(17, 'FastTrack Deals', 'Las Vegas'),
+(18, 'CyberMart', 'Charlotte'),
+(19, 'Blue Wave Tech', 'Portland'),
+(20, 'Gizmo Point', 'Minneapolis'),
+(21, 'DigitalNest', 'Columbus'),
+(22, 'SmartNation', 'Salt Lake City'),
+(23, 'Fusion Traders', 'Kansas City'),
+(24, 'Quantum Store', 'San Jose'),
+(25, 'Vertex Vendors', 'Indianapolis'),
+(26, 'NexTech', 'Cleveland'),
+(27, 'Urban Devices', 'Orlando'),
+(28, 'Gadget Grid', 'St. Louis'),
+(29, 'ElectroStop', 'Raleigh'),
+(30, 'Pulse Retail', 'Tampa'),
+(31, 'SmartLoop', 'Milwaukee'),
+(32, 'PowerHouse', 'Cincinnati'),
+(33, 'Redline Gadgets', 'Buffalo'),
+(34, 'NextWare', 'Nashville'),
+(35, 'Innovatech', 'Sacramento'),
+(36, 'Visionary Electronics', 'Louisville'),
+(37, 'Streamline Tech', 'Baltimore'),
+(38, 'Amped Up', 'Richmond'),
+(39, 'Digitronics', 'Omaha'),
+(40, 'Supreme Tech', 'Birmingham'),
+(41, 'Sonic Supplies', 'Jacksonville'),
+(42, 'ByteCity', 'Fresno'),
+(43, 'Smart Picks', 'Oklahoma City'),
+(44, 'MicroMart', 'Tulsa'),
+(45, 'TrendWare', 'Albuquerque'),
+(46, 'ElectroLink', 'Mesa'),
+(47, 'Techology Pro', 'Long Beach'),
+(48, 'UltraTech', 'Virginia Beach'),
+(49, 'Peak Deals', 'Oakland'),
+(50, 'DigitalRush', 'Colorado Springs'),
+(51, 'ElectraHub', 'Wichita'),
+(52, 'GoGadget', 'Arlington');
+
+select * from products;
+
+INSERT ignore INTO Products (product_id, product_name, category_id, price, COGS) VALUES
+(1, 'Wireless Mouse', 1, 25.99, 12.00),
+(2, 'Gaming Keyboard', 1, 59.99, 28.50),
+(3, 'USB-C Hub', 2, 34.99, 15.00),
+(4, 'Webcam HD', 3, 45.50, 22.00),
+(5, 'Bluetooth Speaker', 4, 69.00, 33.00),
+(6, 'Ergonomic Chair', 5, 199.99, 100.00),
+(7, 'Wi-Fi Router', 6, 89.99, 45.00),
+(8, 'Smartwatch', 7, 149.99, 75.00),
+(9, 'Laptop Cooling Pad', 1, 24.99, 10.00),
+(10, 'LED Desk Lamp', 5, 34.00, 16.00),
+(11, 'Portable SSD 1TB', 1, 99.99, 55.00),
+(12, 'Wireless Charger', 2, 29.99, 12.00),
+(13, 'Office Desk', 5, 250.00, 140.00),
+(14, 'Smartphone Stand', 2, 14.99, 6.00),
+(15, 'Fitness Tracker', 7, 79.99, 40.00),
+(16, 'Laser Printer', 3, 175.00, 90.00),
+(17, 'HDMI Cable 6ft', 2, 9.99, 3.00),
+(18, 'Graphics Tablet', 1, 110.00, 55.00),
+(19, 'Smart Plug', 6, 22.50, 11.00),
+(20, 'Standing Desk', 5, 350.00, 180.00),
+(21, 'LED Light Strip', 5, 18.00, 7.00),
+(22, 'Portable Power Bank', 2, 39.99, 20.00),
+(23, 'IP Camera', 6, 79.00, 45.00),
+(24, 'External DVD Drive', 1, 35.00, 17.00),
+(25, 'Mechanical Pencil Set', 3, 12.00, 4.00),
+(26, 'Bluetooth Earbuds', 4, 49.00, 25.00),
+(27, 'Smart Light Bulb', 6, 16.00, 8.00),
+(28, 'Laptop Backpack', 2, 55.00, 28.00),
+(29, 'Network Switch', 6, 120.00, 65.00),
+(30, 'Paper Shredder', 3, 60.00, 30.00),
+(31, 'Adjustable Monitor Arm', 2, 45.00, 20.00),
+(32, 'Desk Organizer', 3, 20.00, 9.00),
+(33, 'Electric Kettle', 6, 40.00, 22.00),
+(34, 'Air Purifier', 6, 130.00, 70.00),
+(35, 'Digital Clock', 5, 25.00, 14.00),
+(36, 'USB Flash Drive 64GB', 1, 15.00, 7.00),
+(37, 'Webcam Privacy Cover', 2, 5.00, 1.00),
+(38, 'Drawing Stylus Pen', 1, 30.00, 14.00),
+(39, 'Portable Projector', 4, 220.00, 120.00),
+(40, 'Wi-Fi Range Extender', 6, 49.99, 27.00),
+(41, 'Ergonomic Mouse Pad', 2, 10.00, 4.00),
+(42, 'Smart Thermostat', 6, 149.00, 80.00),
+(43, 'Cable Management Kit', 3, 12.99, 5.00),
+(44, 'Compact Dishwasher', 6, 300.00, 180.00),
+(45, 'Monitor Privacy Screen', 2, 50.00, 28.00),
+(46, 'Digital Kitchen Scale', 6, 25.00, 13.00),
+(47, 'Laptop Stand', 2, 35.00, 18.00),
+(48, 'Wireless Presenter', 3, 20.00, 10.00),
+(49, 'Smart Door Lock', 6, 200.00, 100.00),
+(50, 'USB Desk Fan', 5, 18.99, 9.00);
+
+SELECT DISTINCT oi.product_id
+FROM order_items oi
+LEFT JOIN products p ON oi.product_id = p.product_id
+WHERE p.product_id IS NULL;
+
+
+Select * from orders;
+
+
+Alter table orders
+ADD COLUMN seller_id INT ,
+ADD COLUMN order_status VARCHAR (15);
+
+alter table orders
+ADD FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ,
+ADD FOREIGN KEY (seller_id) REFERENCES sellers(seller_id) ; 
+
+INSERT INTO orders (order_id, customer_id, order_date, seller_id, order_status) VALUES
+(301, 1, '2024-01-15', 1, 'Delivered'),
+(302, 2, '2024-01-16', 2, 'Shipped'),
+(303, 3, '2024-01-17', 3, 'Processing'),
+(304, 4, '2024-01-18', 4, 'Delivered'),
+(305, 5, '2024-01-19', 5, 'Cancelled'),
+(306, 6, '2024-01-20', 1, 'Delivered'),
+(307, 7, '2024-01-21', 2, 'Returned'),
+(308, 8, '2024-01-22', 3, 'Shipped'),
+(309, 9, '2024-01-23', 4, 'Delivered'),
+(310, 10, '2024-01-24', 5, 'Processing'),
+(311, 11, '2024-01-25', 1, 'Delivered'),
+(312, 12, '2024-01-26', 2, 'Cancelled'),
+(313, 13, '2024-01-27', 3, 'Shipped'),
+(314, 14, '2024-01-28', 4, 'Delivered'),
+(315, 15, '2024-01-29', 5, 'Processing'),
+(316, 16, '2024-01-30', 1, 'Delivered'),
+(317, 17, '2024-01-31', 2, 'Returned'),
+(318, 18, '2024-02-01', 3, 'Shipped'),
+(319, 19, '2024-02-02', 4, 'Delivered'),
+(320, 20, '2024-02-03', 5, 'Processing');
+
+INSERT INTO orders (order_id, customer_id, order_date, seller_id, order_status) VALUES
+(321, 21, '2024-02-04', 1, 'Delivered'),
+(322, 22, '2024-02-05', 2, 'Shipped'),
+(323, 23, '2024-02-06', 3, 'Processing'),
+(324, 24, '2024-02-07', 4, 'Delivered'),
+(325, 25, '2024-02-08', 5, 'Cancelled'),
+(326, 26, '2024-02-09', 1, 'Delivered'),
+(327, 27, '2024-02-10', 2, 'Returned'),
+(328, 28, '2024-02-11', 3, 'Shipped'),
+(329, 29, '2024-02-12', 4, 'Delivered'),
+(330, 30, '2024-02-13', 5, 'Processing'),
+(331, 31, '2024-02-14', 1, 'Delivered'),
+(332, 32, '2024-02-15', 2, 'Cancelled'),
+(333, 33, '2024-02-16', 3, 'Shipped'),
+(334, 34, '2024-02-17', 4, 'Delivered'),
+(335, 35, '2024-02-18', 5, 'Processing'),
+(336, 36, '2024-02-19', 1, 'Delivered'),
+(337, 37, '2024-02-20', 2, 'Returned'),
+(338, 38, '2024-02-21', 3, 'Shipped'),
+(339, 39, '2024-02-22', 4, 'Delivered'),
+(340, 40, '2024-02-23', 5, 'Processing');
+
+Select * from order_items ;
+Select * from orders ;
+
+
+INSERT INTO order_items (order_item_id, order_id, product_id, quantity, price_per_unit) VALUES
+(21, 301, 5, 2, 49.99),  -- changed from 1 to 21
+(22, 302, 12, 1, 89.99),
+(23, 303, 18, 3, 35.00);
+
+INSERT INTO order_items (order_item_id, order_id, product_id, quantity, price_per_unit) VALUES
+(24, 324, 21, 3, 15.00),
+(25, 325, 6, 2, 19.99),
+(26, 326, 3, 4, 34.50),
+(27, 327, 10, 1, 29.00),
+(28, 328, 11, 2, 39.99),
+(29, 329, 14, 3, 55.00),
+(30, 330, 28, 1, 75.00),
+(31, 331, 29, 1, 49.99),
+(32, 332, 33, 2, 67.00),
+(33, 333, 35, 3, 80.00),
+(34, 334, 38, 2, 19.00),
+(35, 335, 39, 1, 60.00),
+(36, 336, 40, 2, 13.99),
+(37, 337, 43, 1, 44.44),
+(38, 338, 46, 1, 21.00),
+(39, 339, 47, 3, 18.99),
+(40, 340, 49, 2, 99.00);
+
+
+
+ALter table order_items
+ADD COLUMN price_per_unit FLOAT ;
+
+alter table order_items
+ADD FOREIGN KEY (order_id) REFERENCES orders(order_id) ,
+ADD FOREIGN KEY (product_id) REFERENCES products(product_id);
+
+-- payment table
+
+create table Payments
+(
+product_id INT PRIMARY KEY ,
+order_id INT, -- fk
+payment_date DATE,
+payment_status VARCHAR (20),
+CONSTRAINT payments_fk_orders FOREIGN KEY (ORDER_ID) REFERENCES Orders(order_id)
+);
+
+INSERT INTO Payments (product_id, order_id, payment_date, payment_status) VALUES
+(1, 321, '2024-03-01', 'Paid'),
+(2, 322, '2024-03-02', 'Paid'),
+(3, 323, '2024-03-02', 'Pending'),
+(4, 324, '2024-03-03', 'Paid'),
+(5, 325, '2024-03-03', 'Failed'),
+(6, 326, '2024-03-04', 'Paid'),
+(7, 327, '2024-03-04', 'Pending'),
+(8, 328, '2024-03-05', 'Paid'),
+(9, 329, '2024-03-05', 'Paid'),
+(10, 330, '2024-03-06', 'Cancelled'),
+(11, 331, '2024-03-06', 'Paid'),
+(12, 332, '2024-03-07', 'Failed'),
+(13, 333, '2024-03-07', 'Paid'),
+(14, 334, '2024-03-08', 'Pending'),
+(15, 335, '2024-03-08', 'Paid'),
+(16, 336, '2024-03-09', 'Paid'),
+(17, 337, '2024-03-09', 'Failed'),
+(18, 338, '2024-03-10', 'Paid'),
+(19, 339, '2024-03-10', 'Paid'),
+(20, 340, '2024-03-11', 'Pending');
+
+select * from payments;
+
+Create table Shippings
+(
+shipping_id INT PRIMARY KEY,
+order_id INT,
+shipping_date DATE,
+return_date DATE ,
+shipping_providers VARCHAR(20),
+delivery_status VARCHAR(20),
+CONSTRAINT shippings_fk_orders FOREIGN KEY (order_id) REFERENCES Orders(order_id)
+);
+
+INSERT INTO Shippings (shipping_id, order_id, shipping_date, return_date, shipping_providers, delivery_status) VALUES
+(1, 321, '2024-03-01', NULL, 'DHL', 'Delivered'),
+(2, 322, '2024-03-02', NULL, 'FedEx', 'Shipped'),
+(3, 323, '2024-03-03', NULL, 'UPS', 'Processing'),
+(4, 324, '2024-03-04', '2024-03-10', 'DHL', 'Returned'),
+(5, 325, '2024-03-05', NULL, 'Delhivery', 'Cancelled'),
+(6, 326, '2024-03-06', NULL, 'BlueDart', 'Delivered'),
+(7, 327, '2024-03-07', NULL, 'FedEx', 'Returned'),
+(8, 328, '2024-03-08', NULL, 'UPS', 'Delivered'),
+(9, 329, '2024-03-09', NULL, 'DHL', 'Delivered'),
+(10, 330, '2024-03-10', NULL, 'BlueDart', 'Shipped'),
+(11, 331, '2024-03-11', NULL, 'FedEx', 'Delivered'),
+(12, 332, '2024-03-12', '2024-03-20', 'UPS', 'Returned'),
+(13, 333, '2024-03-13', NULL, 'Delhivery', 'Shipped'),
+(14, 334, '2024-03-14', NULL, 'DHL', 'Delivered'),
+(15, 335, '2024-03-15', NULL, 'BlueDart', 'Delivered'),
+(16, 336, '2024-03-16', NULL, 'FedEx', 'Cancelled'),
+(17, 337, '2024-03-17', NULL, 'UPS', 'Delivered'),
+(18, 338, '2024-03-18', NULL, 'Delhivery', 'Shipped'),
+(19, 339, '2024-03-19', NULL, 'DHL', 'Delivered'),
+(20, 340, '2024-03-20', NULL, 'BlueDart', 'Processing');
+
+Create table Inventory
+(
+inventory_id int PRIMARY KEY  ,
+product_id int,
+stock INT ,
+warehouse_id int,
+last_stock_date DATE,
+CONSTRAINT inventory_fk_orders FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
+Select * from products;
+INSERT ignore  Inventory (inventory_id, product_id, stock, warehouse_id, last_stock_date)
+VALUES
+(1, 1, 50, 1, '2025-05-01'),
+(2, 2, 45, 2, '2025-05-02'),
+(3, 3, 100, 3, '2025-05-03'),
+(4, 4, 75, 1, '2025-05-01'),
+(5, 5, 60, 2, '2025-05-01'),
+(6, 6, 80, 3, '2025-05-03'),
+(7, 7, 90, 1, '2025-05-02'),
+(8, 8, 110, 2, '2025-05-01'),
+(9, 9, 120, 3, '2025-05-01'),
+(10, 10, 130, 1, '2025-05-02'),
+(11, 11, 140, 2, '2025-05-03'),
+(12, 12, 150, 3, '2025-05-01'),
+(13, 13, 160, 1, '2025-05-02'),
+(14, 14, 170, 2, '2025-05-01'),
+(15, 15, 180, 3, '2025-05-03'),
+(16, 16, 190, 1, '2025-05-01'),
+(17, 17, 200, 2, '2025-05-02'),
+(18, 18, 210, 3, '2025-05-03'),
+(19, 19, 220, 1, '2025-05-02'),
+(20, 20, 230, 2, '2025-05-01'),
+(21, 21, 240, 3, '2025-05-02'),
+(22, 22, 250, 1, '2025-05-01'),
+(23, 23, 260, 2, '2025-05-03'),
+(24, 24, 270, 3, '2025-05-01'),
+(25, 25, 280, 1, '2025-05-02'),
+(26, 26, 290, 2, '2025-05-01'),
+(27, 27, 300, 3, '2025-05-02'),
+(28, 28, 310, 1, '2025-05-03'),
+(29, 29, 320, 2, '2025-05-01'),
+(30, 30, 330, 3, '2025-05-01'),
+(31, 31, 340, 1, '2025-05-02'),
+(32, 32, 350, 2, '2025-05-03'),
+(33, 33, 360, 3, '2025-05-01'),
+(34, 34, 370, 1, '2025-05-02'),
+(35, 35, 380, 2, '2025-05-01'),
+(36, 36, 390, 3, '2025-05-03'),
+(37, 37, 400, 1, '2025-05-01'),
+(38, 38, 410, 2, '2025-05-02'),
+(39, 39, 420, 3, '2025-05-01'),
+(40, 40, 430, 1, '2025-05-02'),
+(41, 41, 440, 2, '2025-05-03'),
+(42, 42, 450, 3, '2025-05-01'),
+(43, 43, 460, 1, '2025-05-01'),
+(44, 44, 470, 2, '2025-05-02'),
+(45, 45, 480, 3, '2025-05-01'),
+(46, 46, 490, 1, '2025-05-03'),
+(47, 47, 500, 2, '2025-05-01'),
+(48, 48, 510, 3, '2025-05-02'),
+(49, 49, 520, 1, '2025-05-03'),
+(50, 50, 530, 2, '2025-05-01');
+
+select * from inventory;
+select * from products;
+select * from sellers;
+select * from shippings;
+select * from payments;
+select * from orders;
+select * from order_items;
+
+
+-- Business Analysis Problems 
+
+-- 1. Top selling products 
+ -- Query the top 10 products by total sales value 
+ -- include : product name , total quantity sold and total sales value . 
+ 
+
+
+Select * from order_items;
+
+UPDATE order_items
+SET price_per_unit = CASE order_item_id
+    WHEN 5 THEN 129.99
+    WHEN 6 THEN 24.50
+    WHEN 7 THEN 49.99
+    WHEN 8 THEN 55.75
+    WHEN 9 THEN 65.00
+    WHEN 10 THEN 70.00
+    WHEN 11 THEN 80.00
+    WHEN 12 THEN 90.59
+    ELSE price_per_unit  -- leave unchanged for others
+END
+WHERE order_item_id IN (5, 6, 7, 8, 9, 10, 11, 12);
+
+ 
+ -- creating new column 
+ 
+ 
+Alter table order_items
+ADD column total_sale FLOAT ;
+
+select * from order_items;
+
+Update order_items
+SET total_sale = price_per_unit * quantity;
+
+
+Select 
+   oi.product_id,
+   p.product_name,
+   SUM(oi.total_sale) as total_sale,
+   COUNT(o.order_id) as total_orders
+from orders as o
+JOIN
+order_items as oi
+ON oi.order_id = o.order_id
+JOIN
+products as p
+ON p.product_id = oi.product_id 
+GROUP BY 1, 2 
+order by 3 DESC
+LIMIT 10;
+
+/*
+--2. Revenue by categary 
+	calculate totdal revenue generated by each product categary .
+    Include the percentage contribution of each categary to toal revenue. */
+    
+-- categary_id , categary_name , total _revenue , total_contri
+-- oi --products--category
+-- group by categary_id and name sum total oi
+
+Select 
+p.category_id,
+c.categary_name,
+SUM(oi.total_sale) as total_sale,
+SUM(oi.total_sale)/(select SUM(total_sale) from order_items)*100
+as contribution
+from order_items as oi
+JOIN
+ products as p
+ ON p.product_id = oi.product_id 
+ LEFT JOIN categary as c
+ ON c.categary_id = p.product_id 
+ Group By 1 ,2 
+ order by 3 DESC ;
+ 
+ 
+ -- 3. Average order value (AOV)
+ -- Compute the average order value of each customer 
+ -- Challenge : compute only customer with more than 5 order.
+
+select *
+from customers;
+ 
+ UPDATE customers SET first_name = 'John', last_name = 'Doe' WHERE customer_id = 1;
+UPDATE customers SET first_name = 'Jane', last_name = 'Smith' WHERE customer_id = 2;
+UPDATE customers SET first_name = 'Alice', last_name = 'Brown' WHERE customer_id = 3;
+UPDATE customers SET first_name = 'Bob', last_name = 'Johnson' WHERE customer_id = 4;
+UPDATE customers SET first_name = 'Eve', last_name = 'Davis' WHERE customer_id = 5;
+
+
+ALTER TABLE customers
+MODIFY COLUMN state VARCHAR(50);
+
+UPDATE customers SET state = 'California' WHERE customer_id = 1;
+UPDATE customers SET state = 'Texas' WHERE customer_id = 2;
+UPDATE customers SET state = 'Florida' WHERE customer_id = 3;
+UPDATE customers SET state = 'New York' WHERE customer_id = 4;
+UPDATE customers SET state = 'Illinois' WHERE customer_id = 5;
+
+select *
+from orders as o
+JOIN customers as c
+ON c.customer_id = o.customer_id;
+ 
+ Select 
+ c.customer_id,
+ CONCAT (c.first_name , '', c.last_name) as full_name,
+ SUM(total_sale)/count(o.order_id) as AOV ,
+ COUNT(o.order_id) as total_order 
+From orders as o
+ JOIN 
+ customers as c
+ ON c.customer_id = o.customer_id
+ JOIN
+ Order_items as oi
+ ON oi.order_id = o.order_id
+ GROUP BY 1, 2;
+ 
+ -- 4. Queery Monthly toatl sales trend over th epast year .
+ -- Display sales trend , grouping by months, return current month sale , last month sale .
+ 
+ Select 
+ extract(month from o.order_date) as month,
+ extract(year from o.order_date) as year,
+ SUM(oi.total_sale) as total_sale
+ from orders as o 
+ JOIN 
+ order_items as oi
+ ON oi.order_id = o.order_id
+ where o.order_date >= current_date - interval '1 Year';
+ 
+ 
+ 
